@@ -17,7 +17,21 @@ class QuizRepositoryImpl implements QuizRepository {
   QuizRepositoryImpl({required this.localDataSource, this.remoteAIDataSource});
 
   @override
-  Future<Either<Failure, QuizSession>> getQuizSession(int questionCount) async {
+  Future<Either<Failure, QuizSession>> getQuizSession(int questionCount, {String topic = ''}) async {
+    if (topic.isNotEmpty && remoteAIDataSource != null) {
+      final aiResult = await remoteAIDataSource!.generateQuestions(questionCount, topic: topic);
+      return aiResult.fold((failure) => Left(failure), (aiQuestions) {
+        final sessionModel = QuizSessionModel(
+          id: DateTime.now().millisecondsSinceEpoch.toString(),
+          questionIds: aiQuestions.map((q) => q.id).toList(),
+          answers: [],
+          startedAt: DateTime.now(),
+        );
+        final sessionQuestions = aiQuestions.map((q) => q.toEntity()).toList();
+        return Right(sessionModel.toEntity(sessionQuestions));
+      });
+    }
+
     var questionsResult = await localDataSource.getQuestions();
 
     return questionsResult.fold((failure) => Left(failure), (questions) async {

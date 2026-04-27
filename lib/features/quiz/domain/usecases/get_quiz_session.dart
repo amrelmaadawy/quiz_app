@@ -6,7 +6,8 @@ import '../repositories/quiz_repository.dart';
 
 class GetQuizSessionParams {
   final int questionCount;
-  GetQuizSessionParams({required this.questionCount});
+  final String topic;
+  GetQuizSessionParams({required this.questionCount, this.topic = ''});
 }
 
 class GetQuizSessionUseCase
@@ -17,6 +18,6 @@ class GetQuizSessionUseCase
 
   @override
   Future<Either<Failure, QuizSession>> call(GetQuizSessionParams params) {
-    return repository.getQuizSession(params.questionCount);
+    return repository.getQuizSession(params.questionCount, topic: params.topic);
   }
 }

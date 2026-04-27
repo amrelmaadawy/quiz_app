@@ -1,48 +1,43 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Primary Palette
-  static const Color primary = Color(0xFF6C63FF);
-  static const Color primaryDark = Color(0xFF3F3D56);
-  static const Color secondary = Color(0xFF26C6DA);
+  static const Color primary = Color(0xFF0055FF); // Electric Blue
+  static const Color secondary = Color(0xFF00D4FF); // Bright Cyan
+  static const Color background = Color(0xFFF4F7FB); // Soft light blue-grey
+  static const Color surface = Color(0xFFFFFFFF);
+  static const Color textPrimary = Color(0xFF0F172A); // Dark slate
+  static const Color textSecondary = Color(0xFF64748B); // Slate
+  static const Color success = Color(0xFF10B981);
+  static const Color successLight = Color(0xFFD1FAE5); // Emerald 100
+  static const Color warning = Color(0xFFF59E0B);
+  static const Color error = Color(0xFFEF4444);
+  static const Color errorLight = Color(0xFFFEE2E2); // Red 100
+  static const Color errorDark = Color(0xFFB91C1C); // Red 700
+  static const Color divider = Color(0xFFE2E8F0);
+  static const Color primaryDark = Color(0xFF003DCC); // Darker Electric Blue
+  static const Color cardShadow = Color(0x0A000000); // lighter shadow for light theme
 
-  // Backgrounds
-  static const Color background = Color(0xFFF3F4F6); // Soft gray
-  static const Color surface = Colors.white;
-  static const Color cardShadow = Color(0x1F000000);
-
-  // Status Colors
-  static const Color success = Color(0xFF00C853);
-  static const Color successLight = Color(0xFFB9F6CA);
-  static const Color error = Color(0xFFFF5252);
-  static const Color errorLight = Color(0xFFFFEBEE);
-  static const Color errorDark = Color(0xFFC62828);
-
-  // Text Colors
-  static const Color textPrimary = Color(0xFF1F2937); // Tailord dark gray
-  static const Color textSecondary = Color(0xFF6B7280);
-
-  // Gradients
+  // Gradients based on the new palette
   static const LinearGradient primaryGradient = LinearGradient(
-    colors: [Color(0xFF8E2DE2), Color(0xFF4A00E0)],
+    colors: [primary, secondary],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
   
   static const LinearGradient successGradient = LinearGradient(
-    colors: [Color(0xFF00E676), Color(0xFF00C853)],
+    colors: [success, Color(0xFF34D399)], // success to lighter emerald
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   static const LinearGradient practiceGradient = LinearGradient(
-    colors: [Color(0xFF4CAF50), Color(0xFF2E7D32)],
+    colors: [Color(0xFF8B5CF6), Color(0xFFC084FC)], // Purple vibrant
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
   
   static const LinearGradient examGradient = LinearGradient(
-    colors: [Color(0xFF2196F3), Color(0xFF1565C0)],
+    colors: [Color(0xFFF43F5E), Color(0xFFFB7185)], // Rose vibrant
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

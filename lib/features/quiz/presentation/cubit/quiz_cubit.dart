@@ -29,7 +29,7 @@ class QuizCubit extends Cubit<QuizState> {
     emit(const QuizLoading());
 
     final result = await getQuizSession(
-      GetQuizSessionParams(questionCount: questionCount),
+      GetQuizSessionParams(questionCount: questionCount, topic: topic),
     );
 
     result.fold(

@@ -1,7 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:http/http.dart' as http;
-import '../../core/usecases/quiz_strategy.dart';
 import '../../features/quiz/data/datasources/local_data_source.dart';
 import '../../features/quiz/data/datasources/local_data_source_impl.dart';
 import '../../features/quiz/data/datasources/remote_ai_data_source.dart';

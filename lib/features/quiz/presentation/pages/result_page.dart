@@ -142,9 +142,9 @@ class ResultPage extends StatelessWidget {
                     '${result.correctCount}/${result.totalCount}',
                     AppColors.primary,
                   ),
-                  Container(width: 1, height: 40, color: Colors.grey.shade300),
+                  Container(width: 1, height: 40, color: AppColors.divider),
                   _buildStatColumn(context, 'Grade', result.grade, AppColors.textPrimary),
-                  Container(width: 1, height: 40, color: Colors.grey.shade300),
+                  Container(width: 1, height: 40, color: AppColors.divider),
                   _buildStatColumn(
                     context,
                     'Pass Rate',
@@ -259,7 +259,7 @@ class ResultPage extends StatelessWidget {
                        Expanded(
                          child: Text(
                            'Correct Answer: Option ${String.fromCharCode(65 + questionResult.correctIndex)}',
-                           style: TextStyle(color: Colors.green.shade700, fontWeight: FontWeight.bold),
+                           style: TextStyle(color: AppColors.success, fontWeight: FontWeight.bold),
                          ),
                        ),
                      ],

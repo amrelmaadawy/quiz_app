@@ -11,11 +11,11 @@ class ExamCubit extends Cubit<ExamState> {
   ExamCubit({required this.getQuizSession, required this.submitQuiz})
     : super(const ExamInitial());
 
-  Future<void> startExam({int questionCount = 5}) async {
+  Future<void> startExam({int questionCount = 5, String topic = ''}) async {
     emit(const ExamLoading());
 
     final result = await getQuizSession(
-      GetQuizSessionParams(questionCount: questionCount),
+      GetQuizSessionParams(questionCount: questionCount, topic: topic),
     );
 
     result.fold(
